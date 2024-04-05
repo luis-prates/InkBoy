@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://tr5bg5yevtmu"]
+[gd_scene load_steps=3 format=3 uid="uid://tr5bg5yevtmu"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://dc6hdbcgsrql" path="res://Scripts/boy.tscn" id="1_shnhq"]
+[ext_resource type="PackedScene" uid="uid://dv6dp7a2l0y80" path="res://Scenes/level_1.tscn" id="2_b2am5"]
+
+[node name="InkBoy" type="Node2D"]
+
+[node name="Boy" parent="." instance=ExtResource("1_shnhq")]
+position = Vector2(201, 886)
+
+[node name="Level1" parent="." instance=ExtResource("2_b2am5")]

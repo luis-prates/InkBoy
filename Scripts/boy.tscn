@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc6hdbcgsrql"]
+[gd_scene load_steps=3 format=3 uid="uid://dc6hdbcgsrql"]
+
+[ext_resource type="Texture2D" uid="uid://v6e7p550givx" path="res://Sprites/spritesheet_default.png" id="1_ovdto"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p5i8f"]
+radius = 34.0
+height = 100.0
 
 [node name="Boy" type="Node2D"]
 
@@ -10,3 +14,22 @@
 shape = SubResource("CapsuleShape2D_p5i8f")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_ovdto")
+region_enabled = true
+region_rect = Rect2(81, 227, 78, 80)
+
+[node name="Sprite2D2" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_ovdto")
+region_enabled = true
+region_rect = Rect2(109, 548, 50, 28)
+
+[node name="Empty" type="Node2D" parent="CharacterBody2D"]
+
+[node name="Sprite2D3" type="Sprite2D" parent="CharacterBody2D/Empty"]
+position = Vector2(75, 0)
+rotation = 0.619592
+texture = ExtResource("1_ovdto")
+region_enabled = true
+region_rect = Rect2(491, 502, 36, 36)
+
+[node name="Camera2D" type="Camera2D" parent="."]
