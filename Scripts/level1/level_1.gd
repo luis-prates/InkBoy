@@ -11,47 +11,35 @@ func _ready():
 func _process(delta):
 	pass
 
-
-#func _on_bullet_body_entered(body):
-	#print("Inside")
-	#if body is Level1:
-		#print("Level")
-	#if body is Bullet:
-		#print("Bullet")
-	#if body is TileMap:
-		#print("TileMap")
-	#var position = body.position
-	#var surr_cells = tile_map.get_surrounding_cells(position)
-	#for cell in surr_cells:
-		##erase_cell(0, cell)
-		#print("Global:" + str(global_position))
-		#print("Position:" + str(position))
-		##print("Texture is " + str(texture))
-		#
-		#print(cell)
-		#tile_map.set_cell(0, cell, 0, Vector2i(3, 3))
-	##clear()
-
-
 func _on_area_2d_body_entered(body):
 	var object_id = body.get_instance_id()
 	if body is Level1:
 		print("Level")
 	if body is Bullet:
 		print("Bullet")
-		var position = body.position
-		var surr_cells = tile_map.get_surrounding_cells(position)
-		for cell in surr_cells:
-			#erase_cell(0, cell)
-			print("Global:" + str(global_position))
-			print("Position:" + str(position))
-			#print("Texture is " + str(texture))
+		var position = body.position.round()
+		var cell = tile_map.local_to_map(tile_map.to_local(position))
 		
-			print("Cell " + str(cell))
-			print("Cell local to map " + str(tile_map.local_to_map(tile_map.to_local(cell))))
-			tile_map.set_cell(0, tile_map.local_to_map(tile_map.to_local(cell)), 0, Vector2i(3, 3))
-			body.queue_free()
-			#tile_map.set_cell(0, Vector2i(4, 27), 0, Vector2i(3, 3))
+		var all_tiles = tile_map.get_used_cells(0)
+		var collision_cell = cell
+		var collision_cell_x = collision_cell.x
+		var collision_cell_y = collision_cell.y
+		for y in range(collision_cell_y, collision_cell_y + 2):
+			for x in range(collision_cell_x - 2 + y, collision_cell_x + 2 - y):
+				if (Vector2i(x, y) in all_tiles):
+					tile_map.set_cell(0, Vector2i(x, y), 0, Vector2i(3, 3))
+		body.queue_free()
+		#for cell in surr_cells:
+			#print("Surr cell: " + str(tile_map.local_to_map(tile_map.to_local(cell))))
+			#var collision_cell = tile_map.local_to_map(tile_map.to_local(cell))
+			#var collision_cell_x = collision_cell.x
+			#var collision_cell_y = collision_cell.y
+			##for y in range(collision_cell_y, collision_cell_y + 2):
+				##for x in range(collision_cell_x - 2 + y, collision_cell_x + 2 - y):
+					##tile_map.set_cell(0, Vector2i(x, y), 0, Vector2i(3, 3))
+			#
+			#body.queue_free()
+			#tile_map.set_cell(0, collision_cell, 0, Vector2i(3, 3))
 	if body is TileMap:
 		print("TileMap")
 

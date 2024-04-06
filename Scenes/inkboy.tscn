@@ -15,5 +15,3 @@ position = Vector2(0, 900)
 
 [node name="Bullet" parent="." instance=ExtResource("5_2o6tu")]
 position = Vector2(349, 765)
-
-[connection signal="body_entered" from="Bullet" to="Level1" method="_on_bullet_body_entered"]
