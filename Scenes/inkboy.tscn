@@ -1,21 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://tr5bg5yevtmu"]
+[gd_scene load_steps=4 format=3 uid="uid://tr5bg5yevtmu"]
 
 [ext_resource type="PackedScene" uid="uid://dc6hdbcgsrql" path="res://Scenes/boy.tscn" id="1_shnhq"]
 [ext_resource type="PackedScene" uid="uid://b86fhdvk32vv3" path="res://Scenes/levels/level_1.tscn" id="2_b2am5"]
 [ext_resource type="AudioStream" uid="uid://tcnubdwwhhfw" path="res://FairiesTalking.wav" id="4_lfmd8"]
-[ext_resource type="PackedScene" uid="uid://rcg3stbvjmom" path="res://Scenes/bullet.tscn" id="5_2o6tu"]
 
 [node name="InkBoy" type="Node2D"]
 
 [node name="Boy" parent="." instance=ExtResource("1_shnhq")]
+z_index = 1
 position = Vector2(200, 934)
 scale = Vector2(0.5, 0.5)
 
 [node name="Level1" parent="." instance=ExtResource("2_b2am5")]
 position = Vector2(0, 900)
-
-[node name="Bullet" parent="." instance=ExtResource("5_2o6tu")]
-position = Vector2(349, 765)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_lfmd8")
