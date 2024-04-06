@@ -33,3 +33,5 @@ region_enabled = true
 region_rect = Rect2(491, 502, 36, 36)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
