@@ -7,9 +7,11 @@ radius = 5.0
 height = 10.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehdla"]
-radius = 5.0
+radius = 4.0
 
 [node name="Bullet" type="RigidBody2D"]
+max_contacts_reported = 10
+contact_monitor = true
 script = ExtResource("1_47wbg")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]

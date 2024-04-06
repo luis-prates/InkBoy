@@ -1,5 +1,7 @@
-extends TileMap
+extends Node2D
+class_name Level1
 
+@onready var tile_map = $TileMap
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,16 +13,20 @@ func _process(delta):
 
 
 func _on_bullet_body_entered(body):
+	if body is Level1:
+		print("Level")
+	if body is Bullet:
+		print("Bullet")
+	if body is TileMap:
+		print("TileMap")
 	var position = body.position
-	body.clear()
-	var surr_cells = get_surrounding_cells(position)
+	var surr_cells = tile_map.get_surrounding_cells(position)
 	for cell in surr_cells:
 		#erase_cell(0, cell)
 		print("Global:" + str(global_position))
 		print("Position:" + str(position))
 		#print("Texture is " + str(texture))
-		var tile : Vector2 = map_to_local(cell)
-		print(tile)
-		set_cell(0, tile, 0, Vector2i(3, 3))
-		print("Erasing cell at: " + str(cell))
+		
+		print(cell)
+		tile_map.set_cell(0, cell, 0, Vector2i(3, 3))
 	#clear()
