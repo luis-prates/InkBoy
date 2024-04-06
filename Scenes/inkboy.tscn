@@ -9,6 +9,7 @@
 
 [node name="Boy" parent="." instance=ExtResource("1_shnhq")]
 position = Vector2(275, 634)
+scale = Vector2(0.5, 0.5)
 
 [node name="Level1" parent="." instance=ExtResource("2_b2am5")]
 position = Vector2(0, 900)
