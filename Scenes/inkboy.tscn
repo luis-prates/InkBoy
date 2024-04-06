@@ -8,6 +8,8 @@
 
 [node name="Boy" parent="." instance=ExtResource("1_shnhq")]
 position = Vector2(201, 886)
+speed = 600
+jump_force = -400
 
 [node name="Level1" parent="." instance=ExtResource("2_b2am5")]
 position = Vector2(192, 1084)

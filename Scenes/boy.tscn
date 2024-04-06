@@ -13,19 +13,19 @@ script = ExtResource("1_m84cj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_p5i8f")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="body_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_ovdto")
 region_enabled = true
 region_rect = Rect2(81, 227, 78, 80)
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="eye_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_ovdto")
 region_enabled = true
 region_rect = Rect2(109, 548, 50, 28)
 
-[node name="Empty" type="Node2D" parent="."]
+[node name="Hand" type="Node2D" parent="."]
 
-[node name="Sprite2D3" type="Sprite2D" parent="Empty"]
+[node name="hand_sprite" type="Sprite2D" parent="Hand"]
 position = Vector2(75, 0)
 rotation = 0.619592
 texture = ExtResource("1_ovdto")
