@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cstagsewtvvfd"]
+[gd_scene load_steps=9 format=3 uid="uid://cstagsewtvvfd"]
 
 [ext_resource type="Texture2D" uid="uid://b3kqhb1m26n20" path="res://Sprites/tileset.png" id="1_wvoj2"]
 [ext_resource type="Texture2D" uid="uid://dowws66ro4k63" path="res://Sprites/slopes.png" id="2_5lb66"]
 [ext_resource type="Texture2D" uid="uid://8j030ywwnu5f" path="res://Sprites/slopes_flipped.png" id="3_3mv3m"]
+[ext_resource type="Script" path="res://Scripts/tile_map.gd" id="4_tdtm4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8pop"]
 resource_name = "Terrain_Normal"
@@ -555,3 +556,4 @@ format = 2
 layer_0/name = "Ground"
 layer_1/name = "Slope"
 layer_1/tile_data = PackedInt32Array()
+script = ExtResource("4_tdtm4")
