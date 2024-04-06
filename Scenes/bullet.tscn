@@ -16,9 +16,11 @@ script = ExtResource("1_47wbg")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 material = SubResource("CanvasItemMaterial_pp1lf")
+scale = Vector2(2, 2)
 mesh = SubResource("SphereMesh_hwnji")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_ehdla")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

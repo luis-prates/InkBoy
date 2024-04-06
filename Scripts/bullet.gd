@@ -1,18 +1,15 @@
 extends RigidBody2D
 
 var speed = 750
-var range = 1200
+var range = 1500
 var deceleration = 500
 var travel_distance = 0
-#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var CycleCount = 0
 var SecondCount = 0
-
 
 func _ready():
 	var final_impulse = global_transform.basis_xform(Vector2(speed, 0))
 	apply_impulse(final_impulse, Vector2(0, 0))
-	
 
 func _physics_process(delta):
 	travel_distance += speed * delta
