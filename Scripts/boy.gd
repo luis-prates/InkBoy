@@ -3,8 +3,16 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var speed = 600
 @export var jump_force = -400
+const bullet = preload("res://Scenes/Bullet.tscn")
 
 @onready var hand = $Hand/hand_sprite
+
+func shoot():
+	if Input.is_action_just_pressed("shoot"):
+		var new_bullet = bullet.instantiate()
+		new_bullet.global_position = %Marker.global_position
+		new_bullet.global_rotation = %Marker.global_rotation
+		owner.add_child(new_bullet)
 
 func move(delta):
 	var direction = Input.get_axis("move_left", "move_right")
@@ -15,7 +23,7 @@ func move(delta):
 		velocity.y = jump_force
 	move_and_slide()
 	
-func point(delta):
+func point():
 	var mouse_pos = get_global_mouse_position()
 	
 	#if abs(fmod($Hand.rotation, TAU)) > deg_to_rad(90) and abs(fmod($Hand.rotation, TAU)) < deg_to_rad(270):
@@ -30,8 +38,8 @@ func point(delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	point()
+	shoot()
 	
 func _physics_process(delta):
-	point(delta)
 	move(delta)

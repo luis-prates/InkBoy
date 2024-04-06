@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://rcg3stbvjmom"]
+[gd_scene load_steps=5 format=3 uid="uid://b1p48qhi588g6"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_47wbg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pp1lf"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_hwnji"]
 radius = 5.0
@@ -13,7 +15,10 @@ radius = 5.0
 script = ExtResource("1_47wbg")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("CanvasItemMaterial_pp1lf")
 mesh = SubResource("SphereMesh_hwnji")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ehdla")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

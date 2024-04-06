@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b86fhdvk32vv3" path="res://Scenes/levels/level_1.tscn" id="2_b2am5"]
 [ext_resource type="Texture2D" uid="uid://2a6j7utos055" path="res://icon.svg" id="3_js43t"]
 [ext_resource type="PackedScene" uid="uid://cstagsewtvvfd" path="res://Scenes/tile_map.tscn" id="4_uy60a"]
-[ext_resource type="PackedScene" uid="uid://b1p48qhi588g6" path="res://Scenes/Bullet.tscn" id="5_2o6tu"]
+[ext_resource type="PackedScene" uid="uid://b1p48qhi588g6" path="res://Scenes/bullet.tscn" id="5_2o6tu"]
 
 [node name="InkBoy" type="Node2D"]
 
