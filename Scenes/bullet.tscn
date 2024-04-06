@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1p48qhi588g6"]
+[gd_scene load_steps=5 format=3 uid="uid://rcg3stbvjmom"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_47wbg"]
 
@@ -9,9 +9,11 @@ radius = 5.0
 height = 10.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehdla"]
-radius = 4.0
+radius = 4.03113
 
 [node name="Bullet" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
 max_contacts_reported = 10
 contact_monitor = true
 script = ExtResource("1_47wbg")
@@ -24,5 +26,3 @@ mesh = SubResource("SphereMesh_hwnji")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_ehdla")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
