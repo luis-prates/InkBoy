@@ -24,10 +24,16 @@ func _on_area_2d_body_entered(body):
 		var collision_cell = cell
 		var collision_cell_x = collision_cell.x
 		var collision_cell_y = collision_cell.y
+		var first_x = -2
+		var first_y = 1
 		for y in range(collision_cell_y, collision_cell_y + 2):
-			for x in range(collision_cell_x - 2 + y, collision_cell_x + 2 - y):
+			first_x = -2
+			for x in range(collision_cell_x - 2, collision_cell_x + 3):
 				if (Vector2i(x, y) in all_tiles):
-					tile_map.set_cell(0, Vector2i(x, y), 0, Vector2i(3, 3))
+					print("X atlas: " + str(2 + first_x) + " Y atlas: " + str(0 + first_y))
+					tile_map.set_cell(0, Vector2i(x, y), 3, Vector2i(2 + first_x, 0 + first_y))
+					first_x += 1
+			first_y += 1
 		body.queue_free()
 		#for cell in surr_cells:
 			#print("Surr cell: " + str(tile_map.local_to_map(tile_map.to_local(cell))))
