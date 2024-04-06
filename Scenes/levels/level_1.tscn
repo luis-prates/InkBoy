@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://vupj4ng02hdo" path="res://Scenes/floor.tscn" id="4_gyb6w"]
 
 [node name="Level1" type="Node2D"]
-position = Vector2(-153, 1116)
 script = ExtResource("1_thlmp")
 
 [node name="Vertical Walls" type="Node" parent="."]
