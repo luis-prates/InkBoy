@@ -32,6 +32,10 @@ texture = ExtResource("1_ovdto")
 region_enabled = true
 region_rect = Rect2(491, 502, 36, 36)
 
+[node name="RayCast" type="RayCast2D" parent="Hand"]
+target_position = Vector2(101, 0)
+collide_with_areas = true
+
 [node name="Marker" type="Marker2D" parent="Hand"]
 unique_name_in_owner = true
 position = Vector2(101.34, 0)
