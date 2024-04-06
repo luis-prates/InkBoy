@@ -40,7 +40,8 @@ func point():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	point()
-	shoot()
 	
 func _physics_process(delta):
 	move(delta)
+	if not $Hand/RayCast.is_colliding():
+		shoot()

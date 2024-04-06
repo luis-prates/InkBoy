@@ -9,6 +9,8 @@ var travel_distance = 0
 var CycleCount = 0
 var SecondCount = 0
 
+@onready var ball = $ball
+
 func _ready():
 	var final_impulse = global_transform.basis_xform(Vector2(speed, 0))
 	apply_impulse(final_impulse, Vector2(0, 0))

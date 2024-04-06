@@ -1,12 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://rcg3stbvjmom"]
+[gd_scene load_steps=4 format=3 uid="uid://rcg3stbvjmom"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_47wbg"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pp1lf"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_hwnji"]
-radius = 5.0
-height = 10.0
+[ext_resource type="Texture2D" uid="uid://bagkueqtif0by" path="res://Sprites/ball.png" id="2_hks8c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehdla"]
 radius = 4.03113
@@ -18,10 +13,9 @@ max_contacts_reported = 50
 contact_monitor = true
 script = ExtResource("1_47wbg")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-material = SubResource("CanvasItemMaterial_pp1lf")
-scale = Vector2(2, 2)
-mesh = SubResource("SphereMesh_hwnji")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("2_hks8c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
