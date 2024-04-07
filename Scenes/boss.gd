@@ -1,6 +1,7 @@
 extends AnimationPlayer
 
 var hits = 0
+var played = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,12 +14,10 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	print("Entered")
 	print(body)
 	if body is Bullet:
 		hits += 1
-		print("Hit: " + str(hits))
 	
-	if hits >= 5:
+	if hits >= 5 and not played:
 		play("turn")
-		print("Play")
+		played = true
