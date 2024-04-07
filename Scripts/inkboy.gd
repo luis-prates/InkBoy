@@ -4,9 +4,14 @@ extends Node2D
 @onready var deathzone2 = $Deathzone2
 @onready var unity_logo = $"Unity Logo/Area2D"
 @onready var unity_logo_sprite = $"Unity Logo/Area2D/Sprite2D"
+@onready var boss_area = $BossyBoss/Node2D/Area2D
+@onready var boss_animation = $BossyBoss/Boss
+@onready var boy_instance = $Boy
 
-var boy = null 
+var boy = null
 var godot = false
+var hits = 0
+var played = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +21,16 @@ func _ready():
 	deathzone1.body_entered.connect(_on_deathzone1_body_entered)
 	deathzone2.body_entered.connect(_on_deathzone2_body_entered)
 	unity_logo.body_entered.connect(_on_unity_shot)
+	boss_area.body_entered.connect(_on_boss_shot)
+
+func _on_boss_shot(body):
+	if body is Bullet:
+		hits += 1
+
+	if hits >= 5 and not played:
+		boss_animation.end_animation()
+		played = true
+		boy_instance.set_active(false)
 	
 func _on_unity_shot(body):
 	if !godot:

@@ -5,6 +5,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var speed = 350
 var jump_force = -500
 const bullet = preload("res://Scenes/Bullet.tscn")
+var active = true
 
 var coyote_frames = 6
 var coyote = false
@@ -16,6 +17,9 @@ var jumping = false
 
 func _on_coyote_timeout():
 	coyote = false
+
+func set_active(state):
+	active = state
 
 func shoot():
 	if Input.is_action_just_pressed("shoot"):
@@ -66,9 +70,12 @@ func _process(delta):
 	point()
 	
 func _physics_process(delta):
+	if not active:
+		pass
+	
 	move(delta)
 	move_and_slide()
-	
+
 	var last_floor = is_on_floor()
 	
 	if not $Hand/RayCast.is_colliding():
