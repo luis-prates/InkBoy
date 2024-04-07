@@ -17,7 +17,6 @@ func _on_area_2d_body_entered(body):
 	if body is Level1:
 		print("Level")
 	if body is Bullet:
-		print("Bullet")
 		var side
 		var position = body.position.round()
 		var all_tiles = tile_map.get_used_cells(2)
@@ -50,9 +49,7 @@ func _on_area_2d_body_entered(body):
 			atlas_center_y = 2
 			first_x = 0
 			first_y = -2
-		
-		print("Side is: " + str(side));
-		
+
 		if collision_cell not in all_tiles:
 			match side:
 				Side.Up:
