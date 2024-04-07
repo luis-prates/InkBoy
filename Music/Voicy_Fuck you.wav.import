@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2t13sri026q"
+path="res://.godot/imported/Voicy_Fuck you.wav-85c93508156b249f70a363455ad897cf.sample"
+
+[deps]
+
+source_file="res://music/Voicy_Fuck you.wav"
+dest_files=["res://.godot/imported/Voicy_Fuck you.wav-85c93508156b249f70a363455ad897cf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

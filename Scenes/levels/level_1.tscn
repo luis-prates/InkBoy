@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=3 uid="uid://b86fhdvk32vv3"]
+
+[ext_resource type="Script" path="res://scripts/level1/level_1.gd" id="1_thlmp"]
+[ext_resource type="PackedScene" uid="uid://dv58408srf4gd" path="res://scenes/tall_vertical_wall.tscn" id="2_8cck6"]
+[ext_resource type="PackedScene" uid="uid://54uiyk88ktvd" path="res://scenes/small_platform.tscn" id="3_vgofu"]
+[ext_resource type="PackedScene" uid="uid://bhqkd7rfybtfb" path="res://scenes/vertical_wall.tscn" id="4_1lxm2"]
+[ext_resource type="PackedScene" uid="uid://vupj4ng02hdo" path="res://scenes/floor.tscn" id="4_gyb6w"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_thlmp")
+
+[node name="Vertical Walls" type="Node" parent="."]
+
+[node name="Vertical_Wall" parent="Vertical Walls" instance=ExtResource("4_1lxm2")]
+position = Vector2(516, 1109)
+
+[node name="Vertical_Wall2" parent="Vertical Walls" instance=ExtResource("4_1lxm2")]
+position = Vector2(534, 1100)
+
+[node name="Vertical_Wall3" parent="Vertical Walls" instance=ExtResource("4_1lxm2")]
+position = Vector2(548, 1092)
+
+[node name="Vertical_Wall4" parent="Vertical Walls" instance=ExtResource("4_1lxm2")]
+position = Vector2(566, 1083)
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("3_vgofu")]
+position = Vector2(2967, 500)
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("3_vgofu")]
+position = Vector2(3255, 621)
+
+[node name="Platform12" parent="Platforms" instance=ExtResource("3_vgofu")]
+position = Vector2(3549, 500)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("3_vgofu")]
+position = Vector2(2083, 995)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("3_vgofu")]
+position = Vector2(1865, 919)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("3_vgofu")]
+position = Vector2(2083, 810)
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("3_vgofu")]
+position = Vector2(1865, 726)
+
+[node name="Platform9" parent="Platforms" instance=ExtResource("3_vgofu")]
+position = Vector2(2084, 621)
+
+[node name="Platform" parent="Platforms" instance=ExtResource("3_vgofu")]
+position = Vector2(663, 964)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("3_vgofu")]
+position = Vector2(890, 925)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("3_vgofu")]
+position = Vector2(1117, 882)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("3_vgofu")]
+position = Vector2(149, 961)
+
+[node name="Floors" type="Node" parent="."]
+
+[node name="Floor" parent="Floors" instance=ExtResource("4_gyb6w")]
+position = Vector2(2, 1125)
+
+[node name="Floor3" parent="Floors" instance=ExtResource("4_gyb6w")]
+position = Vector2(1337, 834)
+
+[node name="Floor4" parent="Floors" instance=ExtResource("4_gyb6w")]
+position = Vector2(1086, 1116)
+
+[node name="Floor2" parent="Floors" instance=ExtResource("4_gyb6w")]
+position = Vector2(582, 1077)
+
+[node name="Floor5" parent="Floors" instance=ExtResource("4_gyb6w")]
+position = Vector2(1337, 487)
+
+[node name="Floor6" parent="Floors" instance=ExtResource("4_gyb6w")]
+position = Vector2(582, 1077)
+
+[node name="Floor7" parent="Floors" instance=ExtResource("4_gyb6w")]
+position = Vector2(1601, 1116)
+
+[node name="Floor8" parent="Floors" instance=ExtResource("4_gyb6w")]
+position = Vector2(1852, 333)
+
+[node name="Floor9" parent="Floors" instance=ExtResource("4_gyb6w")]
+position = Vector2(2339, 621)
+
+[node name="Floor10" parent="Floors" instance=ExtResource("4_gyb6w")]
+position = Vector2(3971, 671)
+
+[node name="Floor11" parent="Floors" instance=ExtResource("4_gyb6w")]
+position = Vector2(4493, 671)
+
+[node name="Tall Walls" type="Node" parent="."]
+
+[node name="Tall Vertical Wall" parent="Tall Walls" instance=ExtResource("2_8cck6")]
+position = Vector2(1, 810)
+
+[node name="Tall Vertical Wall2" parent="Tall Walls" instance=ExtResource("2_8cck6")]
+position = Vector2(1550, 591)
+
+[node name="Tall Vertical Wall3" parent="Tall Walls" instance=ExtResource("2_8cck6")]
+position = Vector2(1835, 581)
+
+[node name="Tall Vertical Wall7" parent="Tall Walls" instance=ExtResource("2_8cck6")]
+position = Vector2(3790, 671)
+
+[node name="Tall Vertical Wall6" parent="Tall Walls" instance=ExtResource("2_8cck6")]
+position = Vector2(3760, 671)
+
+[node name="Tall Vertical Wall4" parent="Tall Walls" instance=ExtResource("2_8cck6")]
+position = Vector2(289, 674)
+
+[node name="Tall Vertical Wall5" parent="Tall Walls" instance=ExtResource("2_8cck6")]
+position = Vector2(1, 530)

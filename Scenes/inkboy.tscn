@@ -1,0 +1,40 @@
+[gd_scene load_steps=10 format=3 uid="uid://tr5bg5yevtmu"]
+
+[ext_resource type="Script" path="res://scripts/inkboy.gd" id="1_b3jl3"]
+[ext_resource type="PackedScene" uid="uid://dc6hdbcgsrql" path="res://scenes/boy.tscn" id="1_shnhq"]
+[ext_resource type="PackedScene" uid="uid://m6cksd5pcple" path="res://scenes/ui_layer.tscn" id="2_8s0es"]
+[ext_resource type="PackedScene" uid="uid://b86fhdvk32vv3" path="res://scenes/levels/level_1.tscn" id="2_b2am5"]
+[ext_resource type="PackedScene" uid="uid://b0s7g6nxtbwjd" path="res://scenes/unity_logo.tscn" id="4_3w3ce"]
+[ext_resource type="AudioStream" uid="uid://tcnubdwwhhfw" path="res://music/FairiesTalking.wav" id="4_lfmd8"]
+[ext_resource type="PackedScene" uid="uid://cj14f08soxml2" path="res://scenes/boss.tscn" id="5_2bqyt"]
+[ext_resource type="PackedScene" uid="uid://dfy5bwe0l7bce" path="res://scenes/deathzone_1.tscn" id="6_brg2x"]
+[ext_resource type="PackedScene" uid="uid://c2un0k5c6wnfs" path="res://scenes/deathzone_2.tscn" id="7_njl1v"]
+
+[node name="InkBoy" type="Node2D"]
+script = ExtResource("1_b3jl3")
+
+[node name="UILayer" parent="." instance=ExtResource("2_8s0es")]
+
+[node name="Boy" parent="." groups=["boy"] instance=ExtResource("1_shnhq")]
+z_index = 1
+position = Vector2(200, 751)
+scale = Vector2(0.5, 0.5)
+
+[node name="Level1" parent="." instance=ExtResource("2_b2am5")]
+position = Vector2(0, 900)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lfmd8")
+autoplay = true
+
+[node name="Unity Logo" parent="." instance=ExtResource("4_3w3ce")]
+position = Vector2(1418, 752)
+
+[node name="Deathzone1" parent="." instance=ExtResource("6_brg2x")]
+position = Vector2(2541, 1359)
+
+[node name="Deathzone2" parent="." instance=ExtResource("7_njl1v")]
+position = Vector2(3799, 1010)
+
+[node name="BossyBoss" parent="." instance=ExtResource("5_2bqyt")]
+position = Vector2(4425, 654)

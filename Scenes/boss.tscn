@@ -1,0 +1,146 @@
+[gd_scene load_steps=8 format=3 uid="uid://cj14f08soxml2"]
+
+[ext_resource type="Texture2D" uid="uid://11lr2cj6tuwl" path="res://sprites/Angry.png" id="1_exuvt"]
+[ext_resource type="Texture2D" uid="uid://bfbmjcvf2vtgl" path="res://sprites/sad.png" id="2_037kn"]
+[ext_resource type="PackedScene" uid="uid://54uiyk88ktvd" path="res://scenes/small_platform.tscn" id="3_8iq2t"]
+[ext_resource type="Script" path="res://scripts/boss.gd" id="4_s7lg6"]
+
+[sub_resource type="Animation" id="Animation_3p4n3"]
+resource_name = "turn"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5001, 0.7, 1.0001, 1.3, 1.5, 1.8, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.7, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(86, -193), Vector2(-164, -178), Vector2(-164, -178), Vector2(-115, -175), Vector2(-85, -175), Vector2(-85, -175), Vector2(-121, -154), Vector2(-121, -154), Vector2(-116, -148), Vector2(-124, -152), Vector2(-121, -154), Vector2(-116, -148), Vector2(-124, -152), Vector2(-124, -152), Vector2(-121, -154), Vector2(-116, -148), Vector2(-116, -148), Vector2(-23, -152)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0001, 0.5, 0.7, 1.0001, 1.3, 1.5, 1.8, 2.1, 3.7, 3.9),
+"transitions": PackedFloat32Array(0.659754, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0.681818, 1), Vector2(0.681818, 1), Vector2(1, 1), Vector2(0.772727, 1), Vector2(0.772727, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(0.424659, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5, 1.8, 2.1, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.116937, -0.116937, -0.116937]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.1, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_exuvt"), ExtResource("1_exuvt"), ExtResource("2_037kn")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.9, 4.1, 4.3, 4.7, 4.9, 5.1, 5.5, 5.7, 5.9, 6.3, 6.5, 6.7, 7.1, 7.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(50, -50), Vector2(100, 0), Vector2(100, 0), Vector2(150, -50), Vector2(200, 0), Vector2(200, 0), Vector2(250, -50), Vector2(300, 0), Vector2(300, 0), Vector2(350, -50), Vector2(400, 0), Vector2(400, 0), Vector2(800, -1000)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 7.6, 7.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_sn3si"]
+resource_name = "turn_annoyed"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aorxi"]
+_data = {
+"turn": SubResource("Animation_3p4n3"),
+"turn_annoyed": SubResource("Animation_sn3si")
+}
+
+[node name="BossyBoss" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+position = Vector2(800, -1000)
+
+[node name="Platform22" parent="Node2D" instance=ExtResource("3_8iq2t")]
+position = Vector2(-67, -15)
+
+[node name="Platform14" parent="Node2D" instance=ExtResource("3_8iq2t")]
+position = Vector2(-48, -47)
+
+[node name="Platform15" parent="Node2D" instance=ExtResource("3_8iq2t")]
+position = Vector2(-88, -79)
+
+[node name="Platform16" parent="Node2D" instance=ExtResource("3_8iq2t")]
+position = Vector2(-48, -111)
+
+[node name="Platform17" parent="Node2D" instance=ExtResource("3_8iq2t")]
+position = Vector2(-139, -143)
+
+[node name="Platform18" parent="Node2D" instance=ExtResource("3_8iq2t")]
+position = Vector2(-165, -175)
+
+[node name="Platform19" parent="Node2D" instance=ExtResource("3_8iq2t")]
+position = Vector2(-182, -207)
+
+[node name="Platform20" parent="Node2D" instance=ExtResource("3_8iq2t")]
+position = Vector2(-129, -239)
+
+[node name="Platform21" parent="Node2D" instance=ExtResource("3_8iq2t")]
+position = Vector2(-78, -271)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(-23, -152)
+rotation = -0.116937
+scale = Vector2(0.424659, 1)
+texture = ExtResource("2_037kn")
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Area2D"]
+polygon = PackedVector2Array(56, -278, -86, -278, -86, -246, -139, -246, -139, -214, -193, -214, -192, -170, -174, -169, -173, -138, -146, -138, -146, -102, -57, -104, -57, -85, -98, -86, -96, -41, -57, -41, -56, -24, -76, -24, -75, 6, 63, 6, 64, -10, 85, -10, 85, -53, 47, -53, 44, -73, 84, -73, 85, -116, -4, -119, -1, -153, -29, -150, -32, -182, -47, -184, -49, -199, 6, -201, 5, -231, 56, -232)
+
+[node name="Boss" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Node2D")
+libraries = {
+"": SubResource("AnimationLibrary_aorxi")
+}
+script = ExtResource("4_s7lg6")
+
+[connection signal="body_entered" from="Node2D/Area2D" to="Boss" method="_on_area_2d_body_entered"]
