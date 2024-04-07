@@ -31,21 +31,24 @@ func shoot():
 func move(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	velocity.x = speed * direction
-
+	
+	if is_on_floor():
+		jumping = false
+		last_floor = true
 
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-		if last_floor and !jumping:
-			coyote = true
-			Coyote_timer.start()
+	if not is_on_floor() and last_floor and not jumping:
+		coyote = true
+		Coyote_timer.start()
 
 	if Input.is_action_just_pressed("move_up") and (is_on_floor() or coyote):
 		#AudioPlayer.play_sfx("jump")
 		velocity.y = jump_force
 		jumping = true
 	
-	print(Coyote_timer.wait_time)
+	print("Timer" + str(Coyote_timer.wait_time) + "| jumping: " + str(jumping) + "| coyote: " + str(coyote) + "| is on floor: " + str(is_on_floor()) + "| last floor:" + str(last_floor))
 
 
 	
@@ -76,7 +79,6 @@ func _physics_process(delta):
 	move(delta)
 	move_and_slide()
 
-	var last_floor = is_on_floor()
 	
 	if not $Hand/RayCast.is_colliding():
 		shoot()
