@@ -13,7 +13,8 @@ var last_floor = false
 var jumping = false 
 
 @onready var Coyote_timer = $Coyote
-@onready var hand = $Hand/hand_sprite
+@onready var hand_sprite = $Hand/hand_sprite
+@onready var hand = $Hand
 
 func _on_coyote_timeout():
 	coyote = false
@@ -48,23 +49,26 @@ func move(delta):
 		velocity.y = jump_force
 		jumping = true
 	
-	print("Timer" + str(Coyote_timer.wait_time) + "| jumping: " + str(jumping) + "| coyote: " + str(coyote) + "| is on floor: " + str(is_on_floor()) + "| last floor:" + str(last_floor))
+	#print("Timer" + str(Coyote_timer.wait_time) + "| jumping: " + str(jumping) + "| coyote: " + str(coyote) + "| is on floor: " + str(is_on_floor()) + "| last floor:" + str(last_floor))
 
 
 	
 func point():
 	var mouse_pos = get_global_mouse_position()
 	
-	#if abs(fmod($Hand.rotation, TAU)) > deg_to_rad(90) and abs(fmod($Hand.rotation, TAU)) < deg_to_rad(270):
-		#hand.flip_h = true
-		#hand.flip_v = true
-		#mouse_pos = Vector2(global_position + (global_position - mouse_pos))
-	#else:
-		#hand.flip_h = false
-		#hand.flip_v = false
 	
-	$Hand.look_at(mouse_pos)
+	hand.look_at(mouse_pos)
+	if hand.rotation_degrees > 360:
+		hand.rotation_degrees = 0
+	elif hand.rotation_degrees < 0:
+		hand.rotation_degrees = 360
 
+	if hand.rotation > TAU / 4 and hand.rotation < 3 * TAU / 4:
+		hand_sprite.flip_h = false
+		hand_sprite.flip_v = true
+	else:
+		hand_sprite.flip_h = false
+		hand_sprite.flip_v = false
 
 func _ready():
 	Coyote_timer.wait_time = coyote_frames / 60.0
@@ -79,7 +83,6 @@ func _physics_process(delta):
 	move(delta)
 	move_and_slide()
 
-	
 	if not $Hand/RayCast.is_colliding():
 		shoot()
 

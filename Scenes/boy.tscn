@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/boy.gd" id="1_m84cj"]
 [ext_resource type="Texture2D" uid="uid://ds01qnb8rltan" path="res://Sprites/Boy.png" id="2_wl14t"]
-[ext_resource type="Texture2D" uid="uid://drumdi8t2bma0" path="res://Sprites/Hand.png" id="3_60547"]
+[ext_resource type="Texture2D" uid="uid://0qbmv6vbmhsd" path="res://Sprites/hand_rotated.png" id="3_afcue"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p5i8f"]
 radius = 34.0
@@ -23,9 +23,8 @@ region_rect = Rect2(0.219677, 0.291496, 159.881, 159.764)
 
 [node name="hand_sprite" type="Sprite2D" parent="Hand"]
 position = Vector2(75, 4)
-rotation = 0.619592
 scale = Vector2(0.501496, 0.501496)
-texture = ExtResource("3_60547")
+texture = ExtResource("3_afcue")
 region_rect = Rect2(491, 502, 36, 36)
 
 [node name="RayCast" type="RayCast2D" parent="Hand"]
