@@ -7,16 +7,8 @@ var jump_force = -500
 const bullet = preload("res://Scenes/Bullet.tscn")
 var active = true
 
-var coyote_frames = 6
-var coyote = false
-var last_floor = false
-var jumping = false 
-
-@onready var Coyote_timer = $Coyote
+@onready var Coyote_timer = $Coyote_timer
 @onready var hand = $Hand/hand_sprite
-
-func _on_coyote_timeout():
-	coyote = false
 
 func set_active(state):
 	active = state
@@ -32,25 +24,17 @@ func move(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	velocity.x = speed * direction
 	
-	if is_on_floor():
-		jumping = false
-		last_floor = true
-
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	if not is_on_floor() and last_floor and not jumping:
-		coyote = true
-		Coyote_timer.start()
-
-	if Input.is_action_just_pressed("move_up") and (is_on_floor() or coyote):
+	if Input.is_action_just_pressed("move_up") and (is_on_floor() or !Coyote_timer.is_stopped()):
 		#AudioPlayer.play_sfx("jump")
 		velocity.y = jump_force
-		jumping = true
-	
-	print("Timer" + str(Coyote_timer.wait_time) + "| jumping: " + str(jumping) + "| coyote: " + str(coyote) + "| is on floor: " + str(is_on_floor()) + "| last floor:" + str(last_floor))
-
-
+		
+	var was_on_floor = is_on_floor()
+	move_and_slide()
+	if was_on_floor and not is_on_floor():
+		Coyote_timer.start()
 	
 func point():
 	var mouse_pos = get_global_mouse_position()
@@ -67,18 +51,16 @@ func point():
 
 
 func _ready():
-	Coyote_timer.wait_time = coyote_frames / 60.0
+	pass
 
 func _process(delta):
 	point()
 	
 func _physics_process(delta):
 	if not active:
-		pass
-	
-	move(delta)
-	move_and_slide()
+		return
 
+	move(delta)
 	
 	if not $Hand/RayCast.is_colliding():
 		shoot()
