@@ -1,7 +1,7 @@
 extends RigidBody2D
 class_name Bullet
 
-signal collided
+signal collideda
 var speed = 750
 var range = 1500
 var deceleration = 500
