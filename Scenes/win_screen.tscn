@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://befjyvkuj0ebx"]
 
-[ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_lq7ul"]
-[ext_resource type="FontFile" uid="uid://dsvsbfl8h0ssb" path="res://Fonts/Kenney Pixel Square.ttf" id="2_vh1ly"]
+[ext_resource type="Script" path="res://scripts/win_screen.gd" id="1_lq7ul"]
+[ext_resource type="FontFile" uid="uid://dsvsbfl8h0ssb" path="res://fonts/Kenney Pixel Square.ttf" id="2_vh1ly"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fclxy"]
 font = ExtResource("2_vh1ly")

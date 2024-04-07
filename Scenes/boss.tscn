@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cj14f08soxml2"]
 
-[ext_resource type="Texture2D" uid="uid://11lr2cj6tuwl" path="res://Sprites/Angry.png" id="1_exuvt"]
-[ext_resource type="Texture2D" uid="uid://bfbmjcvf2vtgl" path="res://Sprites/sad.png" id="2_037kn"]
-[ext_resource type="PackedScene" uid="uid://54uiyk88ktvd" path="res://Scenes/small_platform.tscn" id="3_8iq2t"]
-[ext_resource type="Script" path="res://Scripts/boss.gd" id="4_s7lg6"]
+[ext_resource type="Texture2D" uid="uid://11lr2cj6tuwl" path="res://sprites/Angry.png" id="1_exuvt"]
+[ext_resource type="Texture2D" uid="uid://bfbmjcvf2vtgl" path="res://sprites/sad.png" id="2_037kn"]
+[ext_resource type="PackedScene" uid="uid://54uiyk88ktvd" path="res://scenes/small_platform.tscn" id="3_8iq2t"]
+[ext_resource type="Script" path="res://scripts/boss.gd" id="4_s7lg6"]
 
 [sub_resource type="Animation" id="Animation_3p4n3"]
 resource_name = "turn"

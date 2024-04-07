@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://vupj4ng02hdo"]
 
-[ext_resource type="Script" path="res://Scripts/level1/level_1.gd" id="1_e2d0a"]
-[ext_resource type="PackedScene" uid="uid://cstagsewtvvfd" path="res://Scenes/tile_map.tscn" id="1_j3ubc"]
+[ext_resource type="Script" path="res://scripts/level1/level_1.gd" id="1_e2d0a"]
+[ext_resource type="PackedScene" uid="uid://cstagsewtvvfd" path="res://scenes/tile_map.tscn" id="1_j3ubc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4m84"]
 size = Vector2(528, 177.5)

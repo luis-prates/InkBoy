@@ -1,5 +1,4 @@
 extends Node2D
-class_name Level1
 
 @onready var tile_map = $TileMap
 
@@ -14,8 +13,6 @@ func _process(delta):
 	pass
 
 func _on_area_2d_body_entered(body):
-	if body is Level1:
-		print("Level")
 	if body is Bullet:
 		var side
 		var position = body.position.round()
