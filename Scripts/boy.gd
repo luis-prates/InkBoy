@@ -71,7 +71,7 @@ func _process(delta):
 	
 func _physics_process(delta):
 	if not active:
-		pass
+		return
 	
 	move(delta)
 	move_and_slide()
