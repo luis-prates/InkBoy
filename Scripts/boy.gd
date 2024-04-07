@@ -5,8 +5,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var speed = 350
 var jump_force = -500
 const bullet = preload("res://Scenes/Bullet.tscn")
+var active = true
 
 @onready var hand = $Hand/hand_sprite
+
+func set_active(state):
+	active = state
 
 func shoot():
 	if Input.is_action_just_pressed("shoot"):
@@ -43,6 +47,7 @@ func _process(delta):
 	point()
 	
 func _physics_process(delta):
-	move(delta)
-	if not $Hand/RayCast.is_colliding():
-		shoot()
+	if active:
+		move(delta)
+		if not $Hand/RayCast.is_colliding():
+			shoot()

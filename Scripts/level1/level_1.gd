@@ -3,19 +3,17 @@ class_name Level1
 
 @onready var tile_map = $TileMap
 
-enum Side { Up, Down, Left, Right }
+enum Side {Up, Down, Left, Right}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
 func _on_area_2d_body_entered(body):
-	var object_id = body.get_instance_id()
 	if body is Level1:
 		print("Level")
 	if body is Bullet:
@@ -68,7 +66,6 @@ func _on_area_2d_body_entered(body):
 		
 		var collision_cell_x = collision_cell.x
 		var collision_cell_y = collision_cell.y
-		
 		
 		if side == Side.Up:
 			for y in range(collision_cell_y, collision_cell_y + 2):
