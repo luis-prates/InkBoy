@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="InkBoy"
-run/main_scene="res://Scenes/inkboy.tscn"
+run/main_scene="res://scenes/inkboy.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-AudioPlayer="*res://Scripts/audio_player.gd"
+AudioPlayer="*res://scripts/audio_player.gd"
 
 [display]
 

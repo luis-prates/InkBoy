@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://dc6hdbcgsrql"]
 
-[ext_resource type="Script" path="res://scripts/boy.gd" id="1_m84cj"]
-[ext_resource type="Texture2D" uid="uid://ds01qnb8rltan" path="res://sprites/Boy.png" id="2_wl14t"]
-[ext_resource type="Texture2D" uid="uid://0qbmv6vbmhsd" path="res://sprites/hand_rotated.png" id="3_afcue"]
+[ext_resource type="Script" path="res://scripts/boy.gd" id="1_dmw5v"]
+[ext_resource type="Texture2D" uid="uid://ds01qnb8rltan" path="res://sprites/Boy.png" id="2_3vmdx"]
+[ext_resource type="Texture2D" uid="uid://0qbmv6vbmhsd" path="res://sprites/hand_rotated.png" id="3_4qoyy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p5i8f"]
 radius = 34.0
@@ -47,14 +47,14 @@ _data = {
 }
 
 [node name="Boy" type="CharacterBody2D"]
-script = ExtResource("1_m84cj")
+script = ExtResource("1_dmw5v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_p5i8f")
 
 [node name="body_sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.4875, 0.4875)
-texture = ExtResource("2_wl14t")
+texture = ExtResource("2_3vmdx")
 region_rect = Rect2(0.219677, 0.291496, 159.881, 159.764)
 
 [node name="Hand" type="Node2D" parent="."]
@@ -62,7 +62,7 @@ region_rect = Rect2(0.219677, 0.291496, 159.881, 159.764)
 [node name="hand_sprite" type="Sprite2D" parent="Hand"]
 position = Vector2(75, 4)
 scale = Vector2(0.501496, 0.501496)
-texture = ExtResource("3_afcue")
+texture = ExtResource("3_4qoyy")
 region_rect = Rect2(491, 502, 36, 36)
 
 [node name="RayCast" type="RayCast2D" parent="Hand"]
@@ -88,14 +88,11 @@ position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 drag_horizontal_offset = 0.21
 
-<<<<<<< HEAD
-[connection signal="timeout" from="Jump_Buffer" to="." method="_on_jump_buffer_timeout"]
-=======
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_2ajmp")
 }
 autoplay = "move"
 
->>>>>>> b215b8535ce170d2c54a08dac9e649db06fc852f
+[connection signal="timeout" from="Jump_Buffer" to="." method="_on_jump_buffer_timeout"]
 [connection signal="timeout" from="Coyote_timer" to="." method="_on_coyote_timeout"]
