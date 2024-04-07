@@ -34,11 +34,11 @@ func _on_deathzone2_body_entered(body):
 
 func reset_player_checkpoint1():
 	boy.velocity = Vector2.ZERO
-	boy.global_position = Vector2i(1200, 900)
+	boy.global_position = Vector2i(1200, 950)
 	
 func reset_player_checkpoint2():
 	boy.velocity = Vector2.ZERO
-	boy.global_position = Vector2i(2800, 500)
+	boy.global_position = Vector2i(2800, 550)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

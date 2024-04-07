@@ -6,7 +6,16 @@ var speed = 350
 var jump_force = -500
 const bullet = preload("res://Scenes/Bullet.tscn")
 
+var coyote_frames = 6
+var coyote = false
+var last_floor = false
+var jumping = false 
+
+@onready var Coyote_timer = $Coyote
 @onready var hand = $Hand/hand_sprite
+
+func _on_coyote_timeout():
+	coyote = false
 
 func shoot():
 	if Input.is_action_just_pressed("shoot"):
@@ -18,12 +27,23 @@ func shoot():
 func move(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	velocity.x = speed * direction
+
+
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	if Input.is_action_just_pressed("move_up") && is_on_floor():
-		AudioPlayer.play_sfx("jump")
+
+		if last_floor and !jumping:
+			coyote = true
+			Coyote_timer.start()
+
+	if Input.is_action_just_pressed("move_up") and (is_on_floor() or coyote):
+		#AudioPlayer.play_sfx("jump")
 		velocity.y = jump_force
-	move_and_slide()
+		jumping = true
+	
+	print(Coyote_timer.wait_time)
+
+
 	
 func point():
 	var mouse_pos = get_global_mouse_position()
@@ -38,11 +58,19 @@ func point():
 	
 	$Hand.look_at(mouse_pos)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+func _ready():
+	Coyote_timer.wait_time = coyote_frames / 60.0
+
 func _process(delta):
 	point()
 	
 func _physics_process(delta):
 	move(delta)
+	move_and_slide()
+	
+	var last_floor = is_on_floor()
+	
 	if not $Hand/RayCast.is_colliding():
 		shoot()
+
