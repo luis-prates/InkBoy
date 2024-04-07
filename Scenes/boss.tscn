@@ -63,10 +63,22 @@ tracks/4/path = NodePath(".:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3.9, 4.1, 4.3, 4.7, 4.9, 5.1, 5.5, 5.7, 5.9, 6.3, 6.5, 6.7, 7.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3.9, 4.1, 4.3, 4.7, 4.9, 5.1, 5.5, 5.7, 5.9, 6.3, 6.5, 6.7, 7.1, 7.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(50, -50), Vector2(100, 0), Vector2(100, 0), Vector2(150, -50), Vector2(200, 0), Vector2(200, 0), Vector2(250, -50), Vector2(300, 0), Vector2(300, 0), Vector2(350, -50), Vector2(400, 0), Vector2(400, 0)]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(50, -50), Vector2(100, 0), Vector2(100, 0), Vector2(150, -50), Vector2(200, 0), Vector2(200, 0), Vector2(250, -50), Vector2(300, 0), Vector2(300, 0), Vector2(350, -50), Vector2(400, 0), Vector2(400, 0), Vector2(800, -1000)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 7.6, 7.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_sn3si"]
