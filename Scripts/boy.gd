@@ -21,6 +21,7 @@ func move(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	if Input.is_action_just_pressed("move_up") && is_on_floor():
+		AudioPlayer.play_sfx("jump")
 		velocity.y = jump_force
 	move_and_slide()
 	
