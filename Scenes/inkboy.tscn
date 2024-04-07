@@ -14,7 +14,7 @@ script = ExtResource("1_b3jl3")
 
 [node name="Boy" parent="." groups=["boy"] instance=ExtResource("1_shnhq")]
 z_index = 1
-position = Vector2(200, 928)
+position = Vector2(200, 751)
 scale = Vector2(0.5, 0.5)
 
 [node name="Level1" parent="." instance=ExtResource("2_b2am5")]
