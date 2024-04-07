@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Player
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@export var speed = 350
-@export var jump_force = -500
+var speed = 350
+var jump_force = -500
 const bullet = preload("res://Scenes/Bullet.tscn")
 
 @onready var hand = $Hand/hand_sprite

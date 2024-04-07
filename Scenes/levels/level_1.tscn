@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://b86fhdvk32vv3"]
 
 [ext_resource type="Script" path="res://Scripts/level1/level_1.gd" id="1_thlmp"]
-[ext_resource type="PackedScene" uid="uid://dv58408srf4gd" path="res://Scenes/tall_vertical_wall.tscn" id="2_8cck6"]
+[ext_resource type="PackedScene" path="res://Scenes/tall_vertical_wall.tscn" id="2_8cck6"]
 [ext_resource type="PackedScene" uid="uid://54uiyk88ktvd" path="res://Scenes/small_platform.tscn" id="3_vgofu"]
 [ext_resource type="PackedScene" uid="uid://bhqkd7rfybtfb" path="res://Scenes/vertical_wall.tscn" id="4_1lxm2"]
-[ext_resource type="PackedScene" uid="uid://vupj4ng02hdo" path="res://Scenes/floor.tscn" id="4_gyb6w"]
+[ext_resource type="PackedScene" path="res://Scenes/floor.tscn" id="4_gyb6w"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_thlmp")
@@ -24,30 +24,6 @@ position = Vector2(548, 1092)
 position = Vector2(566, 1083)
 
 [node name="Platforms" type="Node" parent="."]
-
-[node name="Platform13" parent="Platforms" instance=ExtResource("3_vgofu")]
-position = Vector2(4360, 637)
-
-[node name="Platform14" parent="Platforms" instance=ExtResource("3_vgofu")]
-position = Vector2(4320, 605)
-
-[node name="Platform15" parent="Platforms" instance=ExtResource("3_vgofu")]
-position = Vector2(4360, 574)
-
-[node name="Platform16" parent="Platforms" instance=ExtResource("3_vgofu")]
-position = Vector2(4269, 541)
-
-[node name="Platform17" parent="Platforms" instance=ExtResource("3_vgofu")]
-position = Vector2(4309, 511)
-
-[node name="Platform18" parent="Platforms" instance=ExtResource("3_vgofu")]
-position = Vector2(4226, 477)
-
-[node name="Platform19" parent="Platforms" instance=ExtResource("3_vgofu")]
-position = Vector2(4279, 445)
-
-[node name="Platform20" parent="Platforms" instance=ExtResource("3_vgofu")]
-position = Vector2(4330, 416)
 
 [node name="Platform10" parent="Platforms" instance=ExtResource("3_vgofu")]
 position = Vector2(2967, 500)
