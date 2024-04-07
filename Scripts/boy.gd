@@ -6,7 +6,10 @@ var speed = 350
 var jump_force = -500
 const bullet = preload("res://Scenes/Bullet.tscn")
 var active = true
+var Jump_Buffer_Timeout = true
+var jump_available = true
 
+@onready var Jump_Buffer = $Jump_Buffer
 @onready var Coyote_timer = $Coyote_timer
 @onready var hand_sprite = $Hand/hand_sprite
 @onready var hand = $Hand
@@ -24,18 +27,31 @@ func shoot():
 func move(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	velocity.x = speed * direction
+	if is_on_floor():
+		jump_available = true
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
 	if Input.is_action_just_pressed("move_up") and (is_on_floor() or !Coyote_timer.is_stopped()):
 		#AudioPlayer.play_sfx("jump")
-		velocity.y = jump_force
-		
+		if jump_available:
+			jump()
+	
+	if Input.is_action_just_pressed("move_up") and not is_on_floor():
+		Jump_Buffer_Timeout = false
+		Jump_Buffer.start()
+	
+	if is_on_floor() and not Jump_Buffer_Timeout and jump_available:
+		jump()
+	
 	var was_on_floor = is_on_floor()
 	move_and_slide()
+	
 	if was_on_floor and not is_on_floor():
 		Coyote_timer.start()
+	
+	
 	
 func point():
 	var mouse_pos = get_global_mouse_position()
@@ -69,3 +85,9 @@ func _physics_process(delta):
 	if not $Hand/RayCast.is_colliding():
 		shoot()
 
+func jump():
+	velocity.y = jump_force
+	jump_available = false
+	
+func _on_jump_buffer_timeout():
+	Jump_Buffer_Timeout = true
