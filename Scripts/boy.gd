@@ -4,7 +4,7 @@ class_name Player
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var speed = 350
 var jump_force = -500
-const bullet = preload("res://Scenes/Bullet.tscn")
+const bullet = preload ("res://scenes/bullet.tscn")
 var active = true
 var Jump_Buffer_Timeout = true
 var jump_available = true
@@ -57,11 +57,8 @@ func move(delta):
 	if was_on_floor and not is_on_floor():
 		Coyote_timer.start()
 	
-	
-	
 func point():
 	var mouse_pos = get_global_mouse_position()
-	
 	
 	hand.look_at(mouse_pos)
 	if hand.rotation_degrees > 360:

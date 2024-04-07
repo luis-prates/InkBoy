@@ -93,8 +93,6 @@ _data = {
 [node name="BossyBoss" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
-visible = false
-position = Vector2(800, -1000)
 
 [node name="Platform22" parent="Node2D" instance=ExtResource("3_8iq2t")]
 position = Vector2(-67, -15)
@@ -124,10 +122,9 @@ position = Vector2(-129, -239)
 position = Vector2(-78, -271)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-position = Vector2(-23, -152)
-rotation = -0.116937
-scale = Vector2(0.424659, 1)
-texture = ExtResource("2_037kn")
+position = Vector2(86, -193)
+scale = Vector2(1e-05, 1)
+texture = ExtResource("1_exuvt")
 
 [node name="Area2D" type="Area2D" parent="Node2D"]
 collision_layer = 2

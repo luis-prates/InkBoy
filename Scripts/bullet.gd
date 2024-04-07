@@ -5,7 +5,7 @@ signal collideda
 var speed = 750
 var range = 1500
 var deceleration = 500
-var travel_distance = 0
+var travel_distance = 0 
 var CycleCount = 0
 var SecondCount = 0
 
