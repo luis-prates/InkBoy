@@ -10,6 +10,7 @@ var active = true
 @onready var Coyote_timer = $Coyote_timer
 @onready var hand_sprite = $Hand/hand_sprite
 @onready var hand = $Hand
+@onready var animation = $AnimationPlayer
 
 func set_active(state):
 	active = state
@@ -24,6 +25,10 @@ func shoot():
 func move(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	velocity.x = speed * direction
+	if direction:
+		animation.play("move")
+	else:
+		animation.play("idle")
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
