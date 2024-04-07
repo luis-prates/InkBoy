@@ -8,7 +8,8 @@ const bullet = preload("res://Scenes/Bullet.tscn")
 var active = true
 
 @onready var Coyote_timer = $Coyote_timer
-@onready var hand = $Hand/hand_sprite
+@onready var hand_sprite = $Hand/hand_sprite
+@onready var hand = $Hand
 
 func set_active(state):
 	active = state
@@ -39,16 +40,19 @@ func move(delta):
 func point():
 	var mouse_pos = get_global_mouse_position()
 	
-	#if abs(fmod($Hand.rotation, TAU)) > deg_to_rad(90) and abs(fmod($Hand.rotation, TAU)) < deg_to_rad(270):
-		#hand.flip_h = true
-		#hand.flip_v = true
-		#mouse_pos = Vector2(global_position + (global_position - mouse_pos))
-	#else:
-		#hand.flip_h = false
-		#hand.flip_v = false
 	
-	$Hand.look_at(mouse_pos)
+	hand.look_at(mouse_pos)
+	if hand.rotation_degrees > 360:
+		hand.rotation_degrees = 0
+	elif hand.rotation_degrees < 0:
+		hand.rotation_degrees = 360
 
+	if hand.rotation > TAU / 4 and hand.rotation < 3 * TAU / 4:
+		hand_sprite.flip_h = false
+		hand_sprite.flip_v = true
+	else:
+		hand_sprite.flip_h = false
+		hand_sprite.flip_v = false
 
 func _ready():
 	pass

@@ -7,6 +7,7 @@ extends Node2D
 @onready var boss_area = $BossyBoss/Node2D/Area2D
 @onready var boss_animation = $BossyBoss/Boss
 @onready var boy_instance = $Boy
+@onready var ui_layer = $UILayer
 
 var boy = null
 var godot = false
@@ -31,6 +32,8 @@ func _on_boss_shot(body):
 		boss_animation.end_animation()
 		played = true
 		boy_instance.set_active(false)
+		await get_tree().create_timer(8).timeout
+		ui_layer.show_win_screen(true)
 	
 func _on_unity_shot(body):
 	if !godot:
