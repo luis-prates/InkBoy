@@ -13,6 +13,7 @@ var jump_available = true
 @onready var Coyote_timer = $Coyote_timer
 @onready var hand_sprite = $Hand/hand_sprite
 @onready var hand = $Hand
+@onready var animation = $AnimationPlayer
 
 func set_active(state):
 	active = state
@@ -29,6 +30,11 @@ func move(delta):
 	velocity.x = speed * direction
 	if is_on_floor():
 		jump_available = true
+		
+	if direction:
+		animation.play("move")
+	else:
+		animation.play("idle")
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta

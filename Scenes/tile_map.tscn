@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://cstagsewtvvfd"]
 
-[ext_resource type="Texture2D" uid="uid://b3kqhb1m26n20" path="res://Sprites/tileset.png" id="1_wvoj2"]
-[ext_resource type="Texture2D" uid="uid://dowws66ro4k63" path="res://Sprites/slopes.png" id="2_5lb66"]
-[ext_resource type="Texture2D" uid="uid://8j030ywwnu5f" path="res://Sprites/slopes_flipped.png" id="3_3mv3m"]
-[ext_resource type="Texture2D" uid="uid://di6tkl5674l7o" path="res://Sprites/bk_new_tiles.png" id="4_bruov"]
-[ext_resource type="Script" path="res://Scripts/level1/level_1.gd" id="4_p8xtp"]
+[ext_resource type="Texture2D" uid="uid://b3kqhb1m26n20" path="res://sprites/tileset.png" id="1_wvoj2"]
+[ext_resource type="Texture2D" uid="uid://dowws66ro4k63" path="res://sprites/slopes.png" id="2_5lb66"]
+[ext_resource type="Texture2D" uid="uid://8j030ywwnu5f" path="res://sprites/slopes_flipped.png" id="3_3mv3m"]
+[ext_resource type="Texture2D" uid="uid://du0h8nk5u4j5b" path="res://sprites/bk_new_tiles.png" id="4_bruov"]
+[ext_resource type="Script" path="res://scripts/level1/level_1.gd" id="4_p8xtp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8pop"]
 resource_name = "Terrain_Normal"

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8j030ywwnu5f"
-path="res://.godot/imported/slopes_flipped.png-a71140cce2beef2adf9b2dfc37bbe66d.ctex"
+path="res://.godot/imported/slopes_flipped.png-b6af10828ad3e9fd4987cf81d8e064d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/slopes_flipped.png"
-dest_files=["res://.godot/imported/slopes_flipped.png-a71140cce2beef2adf9b2dfc37bbe66d.ctex"]
+source_file="res://sprites/slopes_flipped.png"
+dest_files=["res://.godot/imported/slopes_flipped.png-b6af10828ad3e9fd4987cf81d8e064d1.ctex"]
 
 [params]
 

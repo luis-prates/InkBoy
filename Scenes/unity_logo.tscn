@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0s7g6nxtbwjd"]
 
-[ext_resource type="Texture2D" uid="uid://4w6hlo3ulmci" path="res://Sprites/Unity_logo2.png" id="1_w6fwr"]
+[ext_resource type="Texture2D" uid="uid://4w6hlo3ulmci" path="res://sprites/Unity_logo2.png" id="1_w6fwr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63cvp"]
 size = Vector2(480, 480)

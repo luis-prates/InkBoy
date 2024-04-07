@@ -1,12 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://dc6hdbcgsrql"]
+[gd_scene load_steps=8 format=3 uid="uid://dc6hdbcgsrql"]
 
-[ext_resource type="Script" path="res://Scripts/boy.gd" id="1_m84cj"]
-[ext_resource type="Texture2D" uid="uid://ds01qnb8rltan" path="res://Sprites/Boy.png" id="2_wl14t"]
-[ext_resource type="Texture2D" uid="uid://0qbmv6vbmhsd" path="res://Sprites/hand_rotated.png" id="3_afcue"]
+[ext_resource type="Script" path="res://scripts/boy.gd" id="1_m84cj"]
+[ext_resource type="Texture2D" uid="uid://ds01qnb8rltan" path="res://sprites/Boy.png" id="2_wl14t"]
+[ext_resource type="Texture2D" uid="uid://0qbmv6vbmhsd" path="res://sprites/hand_rotated.png" id="3_afcue"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p5i8f"]
 radius = 34.0
 height = 126.0
+
+[sub_resource type="Animation" id="Animation_b2v1r"]
+resource_name = "idle"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oa1gh"]
+resource_name = "move"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0), Vector2(0, 10), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ajmp"]
+_data = {
+"idle": SubResource("Animation_b2v1r"),
+"move": SubResource("Animation_oa1gh")
+}
 
 [node name="Boy" type="CharacterBody2D"]
 script = ExtResource("1_m84cj")
@@ -50,5 +88,14 @@ position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 drag_horizontal_offset = 0.21
 
+<<<<<<< HEAD
 [connection signal="timeout" from="Jump_Buffer" to="." method="_on_jump_buffer_timeout"]
+=======
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2ajmp")
+}
+autoplay = "move"
+
+>>>>>>> b215b8535ce170d2c54a08dac9e649db06fc852f
 [connection signal="timeout" from="Coyote_timer" to="." method="_on_coyote_timeout"]

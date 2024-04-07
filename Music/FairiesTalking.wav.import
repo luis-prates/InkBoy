@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://tcnubdwwhhfw"
-path="res://.godot/imported/FairiesTalking.wav-afcc0c9da441dbe734bc9a24ed5af8b9.sample"
+path="res://.godot/imported/FairiesTalking.wav-1e07fce0465c3beb4a695e6ba224bb89.sample"
 
 [deps]
 
-source_file="res://Music/FairiesTalking.wav"
-dest_files=["res://.godot/imported/FairiesTalking.wav-afcc0c9da441dbe734bc9a24ed5af8b9.sample"]
+source_file="res://music/FairiesTalking.wav"
+dest_files=["res://.godot/imported/FairiesTalking.wav-1e07fce0465c3beb4a695e6ba224bb89.sample"]
 
 [params]
 

@@ -14,9 +14,6 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	var object_id = body.get_instance_id()
-	if body is Level1:
-		print("Level")
 	if body is Bullet:
 		print("Bullet")
 		var position = body.position
