@@ -15,10 +15,10 @@ tracks/0/path = NodePath("Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5001, 0.7, 1.0001, 1.3, 1.5, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 3.4, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5001, 0.7, 1.0001, 1.3, 1.5, 1.8, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.7, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(86, -193), Vector2(-164, -178), Vector2(-164, -178), Vector2(-115, -175), Vector2(-85, -175), Vector2(-85, -175), Vector2(-121, -154), Vector2(-116, -148), Vector2(-124, -152), Vector2(-121, -154), Vector2(-116, -148), Vector2(-124, -152), Vector2(-124, -152), Vector2(-121, -154), Vector2(-116, -148), Vector2(-116, -148), Vector2(-23, -152)]
+"values": [Vector2(86, -193), Vector2(-164, -178), Vector2(-164, -178), Vector2(-115, -175), Vector2(-85, -175), Vector2(-85, -175), Vector2(-121, -154), Vector2(-121, -154), Vector2(-116, -148), Vector2(-124, -152), Vector2(-121, -154), Vector2(-116, -148), Vector2(-124, -152), Vector2(-124, -152), Vector2(-121, -154), Vector2(-116, -148), Vector2(-116, -148), Vector2(-23, -152)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -27,10 +27,10 @@ tracks/1/path = NodePath("Sprite2D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0001, 0.5, 0.7, 1.0001, 1.3, 1.5, 1.8, 3.4, 3.6),
-"transitions": PackedFloat32Array(0.659754, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.0001, 0.5, 0.7, 1.0001, 1.3, 1.5, 1.8, 2.1, 3.7, 3.9),
+"transitions": PackedFloat32Array(0.659754, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 1), Vector2(0.681818, 1), Vector2(0.681818, 1), Vector2(1, 1), Vector2(0.772727, 1), Vector2(0.772727, 1), Vector2(1, 1), Vector2(1, 1), Vector2(0.424659, 1)]
+"values": [Vector2(0, 1), Vector2(0.681818, 1), Vector2(0.681818, 1), Vector2(1, 1), Vector2(0.772727, 1), Vector2(0.772727, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(0.424659, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -39,10 +39,10 @@ tracks/2/path = NodePath("Sprite2D:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.5, 1.8, 3.4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(1.5, 1.8, 2.1, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -0.116937, -0.116937]
+"values": [0.0, -0.116937, -0.116937, -0.116937]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -51,7 +51,7 @@ tracks/3/path = NodePath("Sprite2D:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.8, 3),
+"times": PackedFloat32Array(0, 3.1, 3.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("1_exuvt"), ExtResource("1_exuvt"), ExtResource("2_037kn")]
@@ -93,6 +93,8 @@ _data = {
 [node name="BossyBoss" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
+visible = false
+position = Vector2(800, -1000)
 
 [node name="Platform22" parent="Node2D" instance=ExtResource("3_8iq2t")]
 position = Vector2(-67, -15)
@@ -122,9 +124,10 @@ position = Vector2(-129, -239)
 position = Vector2(-78, -271)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-position = Vector2(86, -193)
-scale = Vector2(1e-05, 1)
-texture = ExtResource("1_exuvt")
+position = Vector2(-23, -152)
+rotation = -0.116937
+scale = Vector2(0.424659, 1)
+texture = ExtResource("2_037kn")
 
 [node name="Area2D" type="Area2D" parent="Node2D"]
 collision_layer = 2
