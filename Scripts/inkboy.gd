@@ -28,7 +28,7 @@ func _on_boss_shot(body):
 	if body is Bullet:
 		hits += 1
 
-	if hits >= 5 and not played:
+	if hits >= 7 and not played:
 		boss_animation.end_animation()
 		played = true
 		boy_instance.set_active(false)
