@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Scripts/inkboy.gd" id="1_b3jl3"]
 [ext_resource type="PackedScene" uid="uid://dc6hdbcgsrql" path="res://Scenes/boy.tscn" id="1_shnhq"]
 [ext_resource type="PackedScene" uid="uid://b86fhdvk32vv3" path="res://Scenes/levels/level_1.tscn" id="2_b2am5"]
-[ext_resource type="PackedScene" path="res://Scenes/unity_logo.tscn" id="4_3w3ce"]
+[ext_resource type="PackedScene" uid="uid://b0s7g6nxtbwjd" path="res://Scenes/unity_logo.tscn" id="4_3w3ce"]
 [ext_resource type="AudioStream" uid="uid://tcnubdwwhhfw" path="res://Music/FairiesTalking.wav" id="4_lfmd8"]
 [ext_resource type="PackedScene" uid="uid://cj14f08soxml2" path="res://Scenes/boss.tscn" id="5_2bqyt"]
-[ext_resource type="PackedScene" path="res://Scenes/deathzone_1.tscn" id="6_brg2x"]
-[ext_resource type="PackedScene" path="res://Scenes/deathzone_2.tscn" id="7_njl1v"]
+[ext_resource type="PackedScene" uid="uid://dfy5bwe0l7bce" path="res://Scenes/deathzone_1.tscn" id="6_brg2x"]
+[ext_resource type="PackedScene" uid="uid://c2un0k5c6wnfs" path="res://Scenes/deathzone_2.tscn" id="7_njl1v"]
 
 [node name="InkBoy" type="Node2D"]
 script = ExtResource("1_b3jl3")
